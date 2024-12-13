@@ -1,5 +1,4 @@
-[
-  {
+[[ {
     "imageUrl": "https://i.pinimg.com/736x/5b/dc/f9/5bdcf99efff14588d2f5604073652665.jpg",
     "discount": "-15%",
     "title": "Сыворотка",
@@ -12,5 +11,7 @@
     "title": "Крем",
     "description": "HYDRA CREAM",
     "buttonText": "Подробнее"
-  }
+  }]
+
+  
 ]
