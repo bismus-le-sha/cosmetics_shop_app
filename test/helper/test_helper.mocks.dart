@@ -4,18 +4,18 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
-import 'dart:convert' as _i15;
-import 'dart:typed_data' as _i17;
+import 'dart:convert' as _i16;
+import 'dart:typed_data' as _i18;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:http/http.dart' as _i4;
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart'
-    as _i18;
+    as _i13;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i16;
+import 'package:mockito/src/dummies.dart' as _i17;
 import 'package:shared_preferences/shared_preferences.dart' as _i11;
 import 'package:shop/core/error/failures.dart' as _i6;
-import 'package:shop/core/usecase/usecase.dart' as _i14;
+import 'package:shop/core/usecase/usecase.dart' as _i15;
 import 'package:shop/core/util/network.dart' as _i12;
 import 'package:shop/features/promo_slider/data/datasources/local_promo_slide_data_source.dart'
     as _i10;
@@ -28,7 +28,7 @@ import 'package:shop/features/promo_slider/domain/entities/promo_slide_entity.da
 import 'package:shop/features/promo_slider/domain/repositories/promo_slide_repository.dart'
     as _i3;
 import 'package:shop/features/promo_slider/domain/usecases/get_promo_slide_usecase.dart'
-    as _i13;
+    as _i14;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -369,12 +369,19 @@ class MockNetworkInfo extends _i1.Mock implements _i12.NetworkInfo {
         Invocation.getter(#isConnected),
         returnValue: _i5.Future<bool>.value(false),
       ) as _i5.Future<bool>);
+
+  @override
+  _i5.Stream<_i13.InternetStatus> get onConnectivityChanged =>
+      (super.noSuchMethod(
+        Invocation.getter(#onConnectivityChanged),
+        returnValue: _i5.Stream<_i13.InternetStatus>.empty(),
+      ) as _i5.Stream<_i13.InternetStatus>);
 }
 
 /// A class which mocks [GetPromoSlides].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetPromoSlides extends _i1.Mock implements _i13.GetPromoSlides {
+class MockGetPromoSlides extends _i1.Mock implements _i14.GetPromoSlides {
   MockGetPromoSlides() {
     _i1.throwOnMissingStub(this);
   }
@@ -390,7 +397,7 @@ class MockGetPromoSlides extends _i1.Mock implements _i13.GetPromoSlides {
 
   @override
   _i5.Future<_i2.Either<_i6.Failure, List<_i7.PromoSlideEntity>>> call(
-          _i14.NoParams? params) =>
+          _i15.NoParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,
@@ -463,7 +470,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i15.Encoding? encoding,
+    _i16.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -494,7 +501,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i15.Encoding? encoding,
+    _i16.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -525,7 +532,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i15.Encoding? encoding,
+    _i16.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -556,7 +563,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i15.Encoding? encoding,
+    _i16.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -593,7 +600,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<String>.value(_i16.dummyValue<String>(
+        returnValue: _i5.Future<String>.value(_i17.dummyValue<String>(
           this,
           Invocation.method(
             #read,
@@ -604,7 +611,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
       ) as _i5.Future<String>);
 
   @override
-  _i5.Future<_i17.Uint8List> readBytes(
+  _i5.Future<_i18.Uint8List> readBytes(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -614,8 +621,8 @@ class MockClient extends _i1.Mock implements _i4.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<_i17.Uint8List>.value(_i17.Uint8List(0)),
-      ) as _i5.Future<_i17.Uint8List>);
+        returnValue: _i5.Future<_i18.Uint8List>.value(_i18.Uint8List(0)),
+      ) as _i5.Future<_i18.Uint8List>);
 
   @override
   _i5.Future<_i4.StreamedResponse> send(_i4.BaseRequest? request) =>
@@ -648,7 +655,7 @@ class MockClient extends _i1.Mock implements _i4.Client {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockInternetConnection extends _i1.Mock
-    implements _i18.InternetConnection {
+    implements _i13.InternetConnection {
   MockInternetConnection() {
     _i1.throwOnMissingStub(this);
   }
@@ -669,15 +676,15 @@ class MockInternetConnection extends _i1.Mock
       ) as _i5.Future<bool>);
 
   @override
-  _i5.Future<_i18.InternetStatus> get internetStatus => (super.noSuchMethod(
+  _i5.Future<_i13.InternetStatus> get internetStatus => (super.noSuchMethod(
         Invocation.getter(#internetStatus),
-        returnValue: _i5.Future<_i18.InternetStatus>.value(
-            _i18.InternetStatus.connected),
-      ) as _i5.Future<_i18.InternetStatus>);
+        returnValue: _i5.Future<_i13.InternetStatus>.value(
+            _i13.InternetStatus.connected),
+      ) as _i5.Future<_i13.InternetStatus>);
 
   @override
-  _i5.Stream<_i18.InternetStatus> get onStatusChange => (super.noSuchMethod(
+  _i5.Stream<_i13.InternetStatus> get onStatusChange => (super.noSuchMethod(
         Invocation.getter(#onStatusChange),
-        returnValue: _i5.Stream<_i18.InternetStatus>.empty(),
-      ) as _i5.Stream<_i18.InternetStatus>);
+        returnValue: _i5.Stream<_i13.InternetStatus>.empty(),
+      ) as _i5.Stream<_i13.InternetStatus>);
 }

@@ -73,7 +73,7 @@ void main() {
       'should throw a ServerException when the response code is 404 or other',
       () async {
         // arrange
-        setUpMockHttpClientFailure404;
+        setUpMockHttpClientFailure404();
         // act
         final call = dataSource.getPromoSlides;
         // assert

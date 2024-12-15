@@ -6,9 +6,19 @@ class Failure {
 
   const Failure(this.type, this.message);
 
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Failure && other.type == type;
+  }
+
+  @override
+  int get hashCode => type.hashCode;
+
   static const Map<FailureType, String> _defaultMessages = {
-    FailureType.serverError: "Ошибка сервера",
-    FailureType.cacheError: "Ошибка кэша",
+    FailureType.serverError: "Server error",
+    FailureType.cacheError: "Cache error",
   };
 
   factory Failure.fromType(FailureType type, {String? customMessage}) {
