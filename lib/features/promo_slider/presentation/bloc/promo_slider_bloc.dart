@@ -43,8 +43,6 @@ class PromoSliderBloc extends Bloc<PromoSliderEvent, PromoSliderState> {
         return SERVER_FAILURE;
       case FailureType.cacheError:
         return CACHE_FAILURE;
-      default:
-        return DEFAULT_FAILURE;
     }
   }
 }

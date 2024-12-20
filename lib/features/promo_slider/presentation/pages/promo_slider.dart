@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop/features/promo_slider/presentation/widgets/promo_slider_view.dart';
+import 'package:shop/features/promo_slider/presentation/widgets/promo_slider_display.dart';
 import 'package:shop/injection_container.dart';
 
 import '../bloc/promo_slider_bloc.dart';

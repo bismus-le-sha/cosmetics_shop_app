@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  auto_route: ^9.2.2
   dartz: ^0.10.1
   equatable: ^2.0.7
   flutter:
@@ -19,6 +20,7 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^9.1.7
+  auto_route_generator: ^9.0.0
   build_runner: ^2.4.13
   flutter_lints: ^4.0.0
   flutter_test:

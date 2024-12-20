@@ -7,6 +7,7 @@ import 'package:shop/features/promo_slider/data/repositories/promo_slide_reposit
 import 'package:shop/features/promo_slider/domain/usecases/get_promo_slide_usecase.dart';
 import 'package:shop/features/promo_slider/presentation/bloc/promo_slider_bloc.dart';
 
+import 'config/router/router.dart';
 import 'core/util/network.dart';
 import 'features/promo_slider/domain/repositories/promo_slide_repository.dart';
 import 'package:http/http.dart' as http;
@@ -40,4 +41,9 @@ Future<void> init() async {
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton<InternetConnection>(() => InternetConnection());
+
+  //! Config
+
+  //AppRouter
+  sl.registerSingleton<AppRouter>(AppRouter());
 }
