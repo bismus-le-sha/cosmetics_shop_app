@@ -1,4 +1,4 @@
-enum FailureType { serverError, cacheError }
+enum FailureType { serverError, cacheError, listEmpty }
 
 class Failure {
   final FailureType type;
@@ -19,6 +19,7 @@ class Failure {
   static const Map<FailureType, String> _defaultMessages = {
     FailureType.serverError: "Server error",
     FailureType.cacheError: "Cache error",
+    FailureType.listEmpty: "List is empty",
   };
 
   factory Failure.fromType(FailureType type, {String? customMessage}) {

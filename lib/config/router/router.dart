@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 
 import '../../pages/cart.dart';
-import '../../pages/catalogue.dart';
+import '../../features/catalogue_list/presentation/pages/catalogue_page.dart';
 import '../../pages/home_page.dart';
 import '../../pages/profile.dart';
-import '../../start_page.dart';
+import '../../pages/start_page.dart';
 
 part 'router.gr.dart';
 

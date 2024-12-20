@@ -20,10 +20,10 @@ class PromoSliderLoaded extends PromoSliderState {
   List<Object> get props => [listPromoSlideEntity];
 }
 
-class PromoSliderFaulure extends PromoSliderState {
+class PromoSliderFailure extends PromoSliderState {
   final String message;
 
-  const PromoSliderFaulure({required this.message});
+  const PromoSliderFailure({required this.message});
 
   @override
   List<Object> get props => [message];

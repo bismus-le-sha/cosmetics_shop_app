@@ -30,7 +30,7 @@ class PromoSliderBloc extends Bloc<PromoSliderEvent, PromoSliderState> {
 
     failureOrPromoSlide.fold(
       (failure) =>
-          emit(PromoSliderFaulure(message: _mapFailureToMessage(failure))),
+          emit(PromoSliderFailure(message: _mapFailureToMessage(failure))),
       (listPromoSlideEntity) {
         emit(PromoSliderLoaded(listPromoSlideEntity: listPromoSlideEntity));
       },
@@ -43,6 +43,8 @@ class PromoSliderBloc extends Bloc<PromoSliderEvent, PromoSliderState> {
         return SERVER_FAILURE;
       case FailureType.cacheError:
         return CACHE_FAILURE;
+      default:
+        return UNIDENTIFIED_FAILURE;
     }
   }
 }

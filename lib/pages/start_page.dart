@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:shop/widgets/custom_nav_bar.dart';
 
-import 'config/router/router.dart';
+import '../config/router/router.dart';
 
 @RoutePage()
 class StartPage extends StatelessWidget {

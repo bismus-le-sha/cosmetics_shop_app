@@ -23,7 +23,7 @@ class PromoSlider extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (state is PromoSliderLoaded) {
             return PromoSliderDisplay(promoSlids: state.listPromoSlideEntity);
-          } else if (state is PromoSliderFaulure) {
+          } else if (state is PromoSliderFailure) {
             return Center(child: Text(state.message));
           }
           return const SizedBox.shrink();

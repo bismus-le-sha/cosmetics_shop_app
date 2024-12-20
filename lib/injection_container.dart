@@ -9,13 +9,18 @@ import 'package:shop/features/promo_slider/presentation/bloc/promo_slider_bloc.d
 
 import 'config/router/router.dart';
 import 'core/util/network.dart';
+import 'features/catalogue_list/data/datasources/catalogue_datasource.dart';
+import 'features/catalogue_list/data/repositories/catalogue_repository_impl.dart';
+import 'features/catalogue_list/domain/repositories/catalogue_repository.dart';
+import 'features/catalogue_list/domain/usecases/get_catalogue_list.dart';
+import 'features/catalogue_list/presentation/bloc/catalogue_list_bloc.dart';
 import 'features/promo_slider/domain/repositories/promo_slide_repository.dart';
 import 'package:http/http.dart' as http;
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  //! Features - Auth
+  //! Features - Promo Slider
 
   //Bloc
   sl.registerFactory(() => PromoSliderBloc(getPromoSlides: sl()));
@@ -32,6 +37,22 @@ Future<void> init() async {
       () => RemotePromoSlideDataSourceImpl(client: sl()));
   sl.registerLazySingleton<LocalPromoSlideDataSource>(
       () => LocalPromoSlideDataSourceImpl(sharedPreferences: sl()));
+
+  //! Features - Catalogue List
+
+  //Bloc
+  sl.registerFactory(() => CatalogueListBloc(getCatalogueList: sl()));
+
+  //Usecases
+  sl.registerLazySingleton(() => GetCatalogueList(sl()));
+
+  //Repository
+  sl.registerLazySingleton<CatalogueRepository>(
+      () => CatalogueRepositoryImpl(catalogueDatasource: sl()));
+
+  //Datasources
+  sl.registerLazySingleton<CatalogueDatasource>(
+      () => CatalogueDatasourceImpl());
 
   //! Core
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));

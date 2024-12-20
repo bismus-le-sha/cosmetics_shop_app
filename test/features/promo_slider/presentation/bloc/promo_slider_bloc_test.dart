@@ -69,7 +69,7 @@ void main() {
       act: (bloc) => bloc.add(const PromoSliderLoad()),
       expect: () => [
         PromoSliderLoading(),
-        const PromoSliderFaulure(message: SERVER_FAILURE),
+        const PromoSliderFailure(message: SERVER_FAILURE),
       ],
       verify: (_) {
         verify(mockGetPromoSlides.call(NoParams())).called(1);
@@ -86,7 +86,7 @@ void main() {
       act: (bloc) => bloc.add(const PromoSliderLoad()),
       expect: () => [
         PromoSliderLoading(),
-        const PromoSliderFaulure(message: CACHE_FAILURE),
+        const PromoSliderFailure(message: CACHE_FAILURE),
       ],
       verify: (_) {
         verify(mockGetPromoSlides.call(NoParams())).called(1);
