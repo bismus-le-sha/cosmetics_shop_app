@@ -11,11 +11,11 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: const [
-        HomeRoute(),
-        CatalogueRoute(),
-        CartRoute(),
-        ProfileRoute(),
+      routes: [
+        const HomeRoute(),
+        CatalogueNavigationRoute(),
+        const CartRoute(),
+        const ProfileRoute(),
       ],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);

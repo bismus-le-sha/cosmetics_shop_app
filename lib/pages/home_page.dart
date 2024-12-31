@@ -17,12 +17,9 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: screenHeight * 0.4, // Слайдер занимает 40% экрана
+            height: screenHeight * 0.4,
             child: const PromoSlider(),
           ),
-          // SizedBox(
-          //     height: 300,
-          //     child: Image(image: AssetImage('assets/images/promo_image.png'))),
           const ScrollableSection(
             title: 'Новинки',
           ),

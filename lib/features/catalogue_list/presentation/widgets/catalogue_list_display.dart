@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shop/widgets/cta_widget.dart';
 
+import '../../../../config/router/router.dart';
 import '../../domain/entities/catalogue_entity.dart';
 
 class CatalogueListDisplay extends StatelessWidget {
@@ -42,7 +44,11 @@ class CatalogueListDisplay extends StatelessWidget {
                         color: Colors.pink,
                       )
                     : null,
-                onTap: () {},
+                onTap: () => context.router.push(SubcatalogueRoute(
+                    lable: (item.appBarTitile != null
+                        ? item.appBarTitile!
+                        : item.title),
+                    items: item.items)),
               );
             },
           )),
