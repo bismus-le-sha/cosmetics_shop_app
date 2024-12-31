@@ -29,6 +29,25 @@ class CartRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [CatalogueNavigationPage]
+class CatalogueNavigationRoute extends PageRouteInfo<void> {
+  const CatalogueNavigationRoute({List<PageRouteInfo>? children})
+      : super(
+          CatalogueNavigationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CatalogueNavigationRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const CatalogueNavigationPage());
+    },
+  );
+}
+
+/// generated route for
 /// [CataloguePage]
 class CatalogueRoute extends PageRouteInfo<void> {
   const CatalogueRoute({List<PageRouteInfo>? children})
@@ -102,4 +121,56 @@ class StartRoute extends PageRouteInfo<void> {
       return const StartPage();
     },
   );
+}
+
+/// generated route for
+/// [SubcataloguePage]
+class SubcatalogueRoute extends PageRouteInfo<SubcatalogueRouteArgs> {
+  SubcatalogueRoute({
+    Key? key,
+    required List<SubcatalogueEntity> items,
+    required String lable,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SubcatalogueRoute.name,
+          args: SubcatalogueRouteArgs(
+            key: key,
+            items: items,
+            lable: lable,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SubcatalogueRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<SubcatalogueRouteArgs>();
+      return SubcataloguePage(
+        key: args.key,
+        items: args.items,
+        lable: args.lable,
+      );
+    },
+  );
+}
+
+class SubcatalogueRouteArgs {
+  const SubcatalogueRouteArgs({
+    this.key,
+    required this.items,
+    required this.lable,
+  });
+
+  final Key? key;
+
+  final List<SubcatalogueEntity> items;
+
+  final String lable;
+
+  @override
+  String toString() {
+    return 'SubcatalogueRouteArgs{key: $key, items: $items, lable: $lable}';
+  }
 }
