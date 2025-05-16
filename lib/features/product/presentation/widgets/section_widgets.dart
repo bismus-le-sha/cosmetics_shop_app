@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/db.dart';
+import 'package:shop/features/product/data/models/product_model.dart';
 import 'package:shop/features/product/presentation/widgets/product_card.dart';
 
 class SectionTitle extends StatelessWidget {
@@ -26,7 +26,7 @@ class SectionDivider extends StatelessWidget {
   final List<Color> colors;
   const SectionDivider({
     super.key,
-    this.colors = const [Colors.blue, Colors.green],
+    required this.colors,
   });
 
   @override
@@ -51,7 +51,8 @@ class SectionDivider extends StatelessWidget {
 }
 
 class HorizontalItemList extends StatelessWidget {
-  const HorizontalItemList({super.key});
+  final List<ProductModel> products;
+  const HorizontalItemList({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +60,11 @@ class HorizontalItemList extends StatelessWidget {
       height: 350,
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        itemCount: 4,
+        itemCount: products.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const ProductCard(
-            product: TestProduct.productModel,
+          return ProductCard(
+            product: products[index],
           );
         },
       ),

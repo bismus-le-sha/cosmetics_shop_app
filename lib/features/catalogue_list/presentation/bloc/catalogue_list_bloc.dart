@@ -34,11 +34,11 @@ class CatalogueListBloc extends Bloc<CatalogueListEvent, CatalogueListState> {
       },
     );
   }
-}
 
-String _mapFailureToMessage(Failure failure) {
-  if (failure.type case FailureType.serverError) {
-    return LIST_EMPTY_FAILURE;
+  String _mapFailureToMessage(Failure failure) {
+    if (failure.type case FailureType.serverError) {
+      return LIST_EMPTY_FAILURE;
+    }
+    return UNIDENTIFIED_FAILURE;
   }
-  return UNIDENTIFIED_FAILURE;
 }

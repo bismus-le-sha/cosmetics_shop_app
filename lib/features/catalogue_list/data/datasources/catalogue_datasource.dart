@@ -10,6 +10,9 @@ abstract class CatalogueDatasource {
 class CatalogueDatasourceImpl implements CatalogueDatasource {
   @override
   Future<List<CatalogueEntity>> getMenuItems() async {
+    // Simulate a network call or data fetching
+    await Future.delayed(const Duration(seconds: 1));
+
     return [
       CatalogueEntity(
           title: 'Назначение', appBarTitile: 'По назначению', items: stubItems),

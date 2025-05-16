@@ -6,7 +6,6 @@ class AppStyles {
   // Card style
   static const TextStyle productCardCategory = TextStyle(
     fontSize: 14,
-    color: Colors.grey,
   );
   static const TextStyle productCardLable = TextStyle(
     fontSize: 16,
@@ -17,5 +16,13 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
+
+  static const TextStyle productCardOldPrice = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey,
+      decoration: TextDecoration.lineThrough,
+      decorationColor: Colors.grey);
+
   static final Color imagePlaceholderColor = Colors.grey.shade200;
 }
