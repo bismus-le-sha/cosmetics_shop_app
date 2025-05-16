@@ -1,0 +1,2 @@
+D:/vscode_projects/cosmetics_shop_app/android/app/.cxx/Debug/w2g5d5q5/x86/CMakeFiles/edit_cache.dir
+D:/vscode_projects/cosmetics_shop_app/android/app/.cxx/Debug/w2g5d5q5/x86/CMakeFiles/rebuild_cache.dir
