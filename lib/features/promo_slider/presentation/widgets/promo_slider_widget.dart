@@ -31,7 +31,7 @@ class PromoSlideWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.black.withOpacity(0.5),
+            Colors.black.withAlpha(175),
             Colors.transparent,
           ],
           begin: Alignment.bottomCenter,

@@ -33,17 +33,18 @@ class CatalogueListDisplay extends StatelessWidget {
             itemBuilder: (context, index) {
               final item = items[index];
               return ListTile(
-                title: Text(
-                  item.title,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w400),
+                title: Row(
+                  children: [
+                    Text(
+                      item.title,
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.w400),
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: categoryIcon(item))
+                  ],
                 ),
-                trailing: item.icon != null
-                    ? Icon(
-                        item.icon,
-                        color: Colors.pink,
-                      )
-                    : null,
                 onTap: () => context.router.push(SubcatalogueRoute(
                     lable: (item.appBarTitile != null
                         ? item.appBarTitile!
@@ -57,4 +58,13 @@ class CatalogueListDisplay extends StatelessWidget {
       ),
     );
   }
+}
+
+Icon? categoryIcon(item) {
+  return item.icon != null
+      ? Icon(
+          item.icon,
+          color: Colors.pink,
+        )
+      : null;
 }

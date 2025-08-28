@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shop/features/catalogue_list/presentation/pages/sub_cat_grid_products_page.dart';
+import 'package:shop/features/product/data/models/product_model.dart';
+import 'package:shop/pages/filters_page.dart';
 
 import '../../features/catalogue_list/domain/entities/subcatalogue_entity.dart';
 import '../../pages/cart.dart';
@@ -20,7 +23,11 @@ class AppRouter extends RootStackRouter {
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: CatalogueNavigationRoute.page, children: [
             AutoRoute(page: CatalogueRoute.page, initial: true),
-            AutoRoute(page: SubcatalogueRoute.page)
+            AutoRoute(
+              page: SubcatalogueRoute.page,
+            ),
+            AutoRoute(page: SubCatGridProductsRoute.page),
+            AutoRoute(page: FiltersRoute.page),
           ]),
           AutoRoute(page: CartRoute.page),
           AutoRoute(page: ProfileRoute.page)
