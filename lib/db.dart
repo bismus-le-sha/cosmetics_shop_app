@@ -26,6 +26,15 @@ class TestProduct {
       price: 5097,
       oldPrice: 10195,
       promotions: ['1+1']);
+
+  static List<ProductModel> productList = [
+    productModel,
+    productModel,
+    productModel,
+    productModel,
+    promoProductModel1,
+    promoProductModel2,
+  ];
 }
 
 class TestCategoryCardList {
@@ -40,5 +49,20 @@ class TestCategoryCardList {
         lable: 'Для тела', imageUrl: 'https://example.com/image4.jpg'),
     CategoryCarouselCardModel(
         lable: 'Для волос', imageUrl: 'https://example.com/image5.jpg'),
+  ];
+}
+
+class TestFiltersList {
+  static List<String> filters = [
+    'Очищение',
+    'Увлажнение',
+    'Регенерация',
+    'Питание',
+    'Новинки',
+    'Хиты продаж',
+    'Акции',
+    'Сыворотки',
+    'Кремы',
+    'Маски',
   ];
 }

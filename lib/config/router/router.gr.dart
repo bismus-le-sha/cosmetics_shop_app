@@ -67,6 +67,25 @@ class CatalogueRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [FiltersPage]
+class FiltersRoute extends PageRouteInfo<void> {
+  const FiltersRoute({List<PageRouteInfo>? children})
+      : super(
+          FiltersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FiltersRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FiltersPage();
+    },
+  );
+}
+
+/// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
@@ -121,6 +140,59 @@ class StartRoute extends PageRouteInfo<void> {
       return const StartPage();
     },
   );
+}
+
+/// generated route for
+/// [SubCatGridProductsPage]
+class SubCatGridProductsRoute
+    extends PageRouteInfo<SubCatGridProductsRouteArgs> {
+  SubCatGridProductsRoute({
+    Key? key,
+    required String appBarTitle,
+    required List<ProductModel> productList,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SubCatGridProductsRoute.name,
+          args: SubCatGridProductsRouteArgs(
+            key: key,
+            appBarTitle: appBarTitle,
+            productList: productList,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SubCatGridProductsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<SubCatGridProductsRouteArgs>();
+      return SubCatGridProductsPage(
+        key: args.key,
+        appBarTitle: args.appBarTitle,
+        productList: args.productList,
+      );
+    },
+  );
+}
+
+class SubCatGridProductsRouteArgs {
+  const SubCatGridProductsRouteArgs({
+    this.key,
+    required this.appBarTitle,
+    required this.productList,
+  });
+
+  final Key? key;
+
+  final String appBarTitle;
+
+  final List<ProductModel> productList;
+
+  @override
+  String toString() {
+    return 'SubCatGridProductsRouteArgs{key: $key, appBarTitle: $appBarTitle, productList: $productList}';
+  }
 }
 
 /// generated route for

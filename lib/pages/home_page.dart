@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
               TestProduct.promoProductModel1
             ],
           ),
-          HomeCategoryButtons(),
+          const HomeCategoryButtons(),
           ScrollableSection(
             title: 'Хиты',
             colors: const [Colors.orange, Colors.white],
